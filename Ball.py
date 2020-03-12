@@ -11,4 +11,8 @@ class Ball:
         pass
 
     def draw(self):
-        pygame.draw.circle(self.screen, (255,255,255), self.pos, self.r)
+        x,y = self.pos
+        x = int(x)
+        y = int(y)
+        pos = x,y
+        pygame.draw.circle(self.screen, (255,255,255), pos, self.r)
