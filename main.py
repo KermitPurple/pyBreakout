@@ -16,9 +16,9 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
         screen.fill((0,0,0))
-        #ball.update()
-        #ball.collide(size)
-        #ball.draw()
+        ball.update()
+        ball.collide(size, grid)
+        ball.draw()
         grid.draw()
         pygame.display.update()
 
