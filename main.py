@@ -1,4 +1,5 @@
 import pygame
+from Ball import Ball
 import os
 
 os.environ["SDL_VIDEO_WINDOW_POS"] = "15,30"
