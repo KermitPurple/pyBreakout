@@ -8,6 +8,9 @@ class Ball:
         self.r = 10
 
     def collide(self, size, grid = None, paddle = None):
+        self.collidewalls(size)
+
+    def collidewalls(self, size):
         if self.pos[0] - self.r < 0 or self.pos[0] + self.r > size[0]:
             self.vel = (-self.vel[0], self.vel[1])
         if self.pos[1] - self.r < 0 or self.pos[1] + self.r > size[1]:
