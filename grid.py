@@ -4,7 +4,7 @@ class Grid:
     def __init__(self, screen, size):
         self.screen = screen
         self.size = size
-        self.scale = (10,10)
+        self.scale = (20,10)
         self.blocks = [
                 [True] * self.scale[0],
                 [True] * self.scale[0],
