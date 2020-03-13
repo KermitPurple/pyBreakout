@@ -21,17 +21,17 @@ class Ball:
             self.vel = (self.vel[0], -self.vel[1])
 
     def collidegrid(self, grid):
-        #fix this
+        bounced = False
         for i, line in enumerate(grid.blocks):
+            if bounced: break
             for j, block in enumerate(line):
                 if block:
                     if self.pos[0] + self.r >= j * grid.width and self.pos[0] - self.r <= (j + 1) * grid.width: # if x coord is in block
-                        if self.pos[1] + self.r >= i * grid.height and self.pos[1] - self.r <= (i + 1) * grid.height: # if y coord is in block
+                        if self.pos[1] - self.r < (i+1) * grid.height and self.pos[1] < (i+1) * grid.height:
+                            self.vel = (self.vel[0], -self.vel[1])
                             grid.blocks[i][j] = False
-                            if self.pos[0] > j * grid.width and self.pos[0] > (j+1) * grid.width:
-                                self.vel = (-self.vel[0], self.vel[1])
-                            if self.pos[1] > i * grid.height and self.pos[1] > (i+1) * grid.height:
-                                self.vel = (self.vel[0], -self.vel[1])
+                            bounced = True
+                            break
 
     def collidepaddle(self, paddle):
         pass
