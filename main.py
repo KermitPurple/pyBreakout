@@ -8,7 +8,7 @@ def main():
     pygame.display.init()
     size = 900,600
     screen = pygame.display.set_mode(size)
-    ball = Ball(screen, (size[0]/2,size[1]/2), (1,1))
+    ball = Ball(screen, (size[0]/2,size[1]/4*3), (1,1))
     grid = Grid(screen, size)
     running = True
     while running:
