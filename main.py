@@ -14,15 +14,22 @@ def main():
     grid = Grid(screen, size)
     paddle = Paddle(screen, size, (size[0]/2, size[1]/10 * 9))
     running = True
+    pygame.key.set_repeat(40)
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    paddle.move(-15)
+                elif event.key == pygame.K_RIGHT:
+                    paddle.move(15)
         screen.fill((0,0,0))
         grid.draw()
         ball.update()
         ball.collide(size, grid)
         ball.draw()
+        paddle.update()
         paddle.draw()
         pygame.display.update()
 
