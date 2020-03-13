@@ -8,6 +8,7 @@ class Paddle:
         self.size = size
         self.pos = (pos[0] - self.length/2, pos[1])
         self.vel = (0,0)
+        self.speed = 0
 
     def draw(self):
         rect = pygame.Rect(int(self.pos[0]), int(self.pos[1]), self.length, self.height)
@@ -15,6 +16,7 @@ class Paddle:
         
     def update(self):
         self.pos = (self.pos[0] + self.vel[0], self.pos[1] + self.vel[1])
+        self.speed = self.vel[0]
         self.vel = (0,0)
 
     def move(self, delta):

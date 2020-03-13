@@ -34,7 +34,9 @@ class Ball:
                             break
 
     def collidepaddle(self, paddle):
-        pass
+        if self.pos[0] + self.r > paddle.pos[0] and self.pos[0] - self.r < paddle.pos[0] + paddle.length: #inside x
+            if self.pos[1] + self.r > paddle.pos[1] and self.pos[1] - self.r < paddle.pos[1] + paddle.height: #inside y
+                self.vel = (self.vel[0], -self.vel[1])
 
     def update(self):
         self.pos = (self.pos[0] + self.vel[0], self.pos[1] + self.vel[1])
