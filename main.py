@@ -1,6 +1,7 @@
 import pygame
 from ball import Ball
 from grid import Grid
+from Paddle import Paddle
 import os
 
 def main():
@@ -11,6 +12,7 @@ def main():
     ball = Ball(screen, (size[0]/2,size[1]/4*3), (1,1))
     ball.randomvel(10)
     grid = Grid(screen, size)
+    paddle = Paddle(screen, size, (size[0]/2, size[1]/10 * 9))
     running = True
     while running:
         for event in pygame.event.get():
@@ -21,6 +23,7 @@ def main():
         ball.update()
         ball.collide(size, grid)
         ball.draw()
+        paddle.draw()
         pygame.display.update()
 
 if __name__ == "__main__":
