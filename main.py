@@ -27,7 +27,8 @@ def main():
         screen.fill((0,0,0))
         grid.draw()
         ball.update()
-        running = ball.collide(size, grid, paddle)
+        if not ball.collide(size, grid, paddle):
+            running = False
         ball.draw()
         paddle.update()
         paddle.draw()
