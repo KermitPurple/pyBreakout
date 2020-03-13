@@ -27,7 +27,7 @@ def main():
         screen.fill((0,0,0))
         grid.draw()
         ball.update()
-        ball.collide(size, grid, paddle)
+        running = ball.collide(size, grid, paddle)
         ball.draw()
         paddle.update()
         paddle.draw()

@@ -10,15 +10,18 @@ class Ball:
         self.r = 10
 
     def collide(self, size, grid, paddle = None):
-        self.collidewalls(size)
         self.collidegrid(grid)
         self.collidepaddle(paddle)
+        return self.collidewalls(size)
 
     def collidewalls(self, size):
         if self.pos[0] - self.r < 0 or self.pos[0] + self.r > size[0]:
             self.vel = (-self.vel[0], self.vel[1])
-        if self.pos[1] - self.r < 0 or self.pos[1] + self.r > size[1]:
+        if self.pos[1] - self.r < 0:
             self.vel = (self.vel[0], -self.vel[1])
+        if self.pos[1] + self.r > size[1]:
+            return False
+        return True
 
     def collidegrid(self, grid):
         bounced = False
