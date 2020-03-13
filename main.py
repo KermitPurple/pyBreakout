@@ -8,7 +8,7 @@ def main():
     pygame.display.init()
     size = 900,600
     screen = pygame.display.set_mode(size)
-    ball = Ball(screen, (size[0]/2,size[1]/2), (0.5,0.5))
+    ball = Ball(screen, (size[0]/2,size[1]/2), (1,1))
     grid = Grid(screen, size)
     running = True
     while running:
@@ -16,10 +16,10 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
         screen.fill((0,0,0))
+        grid.draw()
         ball.update()
         ball.collide(size, grid)
         ball.draw()
-        grid.draw()
         pygame.display.update()
 
 if __name__ == "__main__":

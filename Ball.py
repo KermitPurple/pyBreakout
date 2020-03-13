@@ -25,6 +25,7 @@ class Ball:
                     if self.pos[0] + self.r >= j * grid.width and self.pos[0] - self.r <= (j + 1) * grid.width: # if x coord is in block
                         if self.pos[1] + self.r >= i * grid.height and self.pos[1] - self.r <= (i + 1) * grid.height: # if y coord is in block
                             self.vel = (self.vel[0], -self.vel[1])
+                            grid.blocks[i][j] = False
 
     def collidepaddle(self, paddle):
         pass

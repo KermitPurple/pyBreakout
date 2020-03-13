@@ -5,7 +5,18 @@ class Grid:
         self.screen = screen
         self.size = size
         self.scale = (10,10)
-        self.blocks = [[True] * self.scale[0]] * self.scale[1]
+        self.blocks = [
+                [True] * self.scale[0],
+                [True] * self.scale[0],
+                [True] * self.scale[0],
+                [True] * self.scale[0],
+                [True] * self.scale[0],
+                [True] * self.scale[0],
+                [True] * self.scale[0],
+                [True] * self.scale[0],
+                [True] * self.scale[0],
+                [True] * self.scale[0],
+                ]
         self.width = self.size[0]/self.scale[0]
         self.height = self.size[1]/self.scale[1]/2
 
