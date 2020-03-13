@@ -1,4 +1,6 @@
 import pygame
+import random
+from numpy import sin, cos
 
 class Ball:
     def __init__(self, screen, pos, vel):
@@ -19,6 +21,7 @@ class Ball:
             self.vel = (self.vel[0], -self.vel[1])
 
     def collidegrid(self, grid):
+        #fix this
         for i, line in enumerate(grid.blocks):
             for j, block in enumerate(line):
                 if block:
@@ -42,3 +45,7 @@ class Ball:
         y = int(y)
         pos = x,y
         pygame.draw.circle(self.screen, (255,255,255), pos, self.r)
+
+    def randomvel(self, scale):
+        theta = random.random()*3.14159265
+        self.vel = (scale* cos(theta), scale* -sin(theta))

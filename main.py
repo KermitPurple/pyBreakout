@@ -9,6 +9,7 @@ def main():
     size = 900,600
     screen = pygame.display.set_mode(size)
     ball = Ball(screen, (size[0]/2,size[1]/4*3), (1,1))
+    ball.randomvel(3)
     grid = Grid(screen, size)
     running = True
     while running:
