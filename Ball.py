@@ -39,7 +39,7 @@ class Ball:
     def collidepaddle(self, paddle):
         if self.pos[0] + self.r > paddle.pos[0] and self.pos[0] - self.r < paddle.pos[0] + paddle.length: #inside x
             if self.pos[1] + self.r > paddle.pos[1] and self.pos[1] - self.r < paddle.pos[1] + paddle.height: #inside y
-                self.vel = (self.vel[0] + paddle.vel[0]/15, -self.vel[1])
+                self.vel = (self.vel[0] + paddle.vel[0]/15, -abs(self.vel[1]))
             if self.pos[1] > paddle.pos[1] and self.pos[1] < paddle.pos[1] + paddle.height:# bounce on side
                 self.vel = (-self.vel[0], self.vel[1])
 
